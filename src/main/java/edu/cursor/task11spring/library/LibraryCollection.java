@@ -1,9 +1,5 @@
 package edu.cursor.task11spring.library;
 
-import edu.cursor.task11spring.library.BookGenre;
-
-import edu.cursor.task11spring.library.Author;
-import edu.cursor.task11spring.library.Book;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
