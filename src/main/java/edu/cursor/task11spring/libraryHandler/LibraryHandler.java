@@ -8,10 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 public interface LibraryHandler {
-    void addAuthorBook();
-    void deleteAuthorBook();
-    void addBookToAuthor();
+    String addBook(Book book);
+
+    String deleteBook(Book book);
+
     Map<Author, List<Book>> getSortedByAuthor();
+
     Map<BookGenre, List<Book>> getSortedByGenre();
-    void refactorAuthorBook();
+
+    boolean updateBook(Book oldBook, Book newBook);
 }
