@@ -5,11 +5,12 @@ import edu.cursor.task11spring.library.Book;
 import edu.cursor.task11spring.library.BookGenre;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Repository
+@Service
 @AllArgsConstructor
 public class LibraryHandlerImpl implements LibraryHandler {
 
