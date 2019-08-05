@@ -3,6 +3,7 @@ package edu.cursor.task11spring.controller;
 import edu.cursor.task11spring.library.Author;
 import edu.cursor.task11spring.library.BookGenre;
 import edu.cursor.task11spring.library.Book;
+import edu.cursor.task11spring.library.TwoBooks;
 import edu.cursor.task11spring.libraryHandler.LibraryHandlerImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,7 +42,7 @@ public class LibraryController {
     }
 
     @RequestMapping(value = "/updateBook", method = RequestMethod.POST)
-    public String updateBook(@RequestBody Book oldBook, @RequestBody Book newBook) {
-        return libraryHandler.updateBook(oldBook, newBook);
+    public String updateBook(@RequestBody TwoBooks twoBooks) {
+        return libraryHandler.updateBook(twoBooks);
     }
 }
