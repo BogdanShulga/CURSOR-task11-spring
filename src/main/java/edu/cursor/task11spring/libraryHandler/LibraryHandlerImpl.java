@@ -3,6 +3,7 @@ package edu.cursor.task11spring.libraryHandler;
 import edu.cursor.task11spring.library.Author;
 import edu.cursor.task11spring.library.Book;
 import edu.cursor.task11spring.library.BookGenre;
+import edu.cursor.task11spring.library.TwoBooks;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -63,7 +64,10 @@ public class LibraryHandlerImpl implements LibraryHandler {
     }
 
     @Override
-    public String updateBook(Book oldBook, Book newBook) {
+    public String updateBook(TwoBooks twoBooks) {
+        Book oldBook = twoBooks.getOldBook();
+        Book newBook = twoBooks.getNewBook();
+
         Author oldAuthor = oldBook.getAuthor();
         Author newAuthor = newBook.getAuthor();
         String answer;
