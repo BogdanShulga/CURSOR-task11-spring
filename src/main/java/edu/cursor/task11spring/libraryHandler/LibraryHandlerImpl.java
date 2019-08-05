@@ -37,7 +37,10 @@ public class LibraryHandlerImpl implements LibraryHandler {
     public String deleteBook(Book book) {
         Author author = book.getAuthor();
         String answer;
-        if (authorBooksMap.containsKey(author) && authorBooksMap.get(author).contains(book)) {
+        if (authorBooksMap.containsKey(author) && authorBooksMap.get(author).contains(book) && authorBooksMap.get(author).size() == 1) {
+            authorBooksMap.remove(author);
+            answer = "The book and author are removed!";
+        } else if (authorBooksMap.containsKey(author) && authorBooksMap.get(author).contains(book) && authorBooksMap.get(author).size() > 1) {
             authorBooksMap.get(author).remove(book);
             answer = "The book is removed!";
         } else {
@@ -59,18 +62,22 @@ public class LibraryHandlerImpl implements LibraryHandler {
     }
 
     @Override
-    public boolean updateBook(Book oldBook, Book newBook) {
+    public String updateBook(Book oldBook, Book newBook) {
         Author oldAuthor = oldBook.getAuthor();
         Author newAuthor = newBook.getAuthor();
+        String answer;
         if (authorBooksMap.containsKey(oldAuthor) && authorBooksMap.get(oldAuthor).contains(oldBook) && authorBooksMap.get(oldAuthor).size() == 1) {
             authorBooksMap.remove(oldAuthor);
             addBook(newBook);
+            answer = "The old book is replaced by new one!";
         } else if (authorBooksMap.containsKey(oldAuthor) && authorBooksMap.get(oldAuthor).contains(oldBook) && authorBooksMap.get(oldAuthor).size() > 1 && oldAuthor.equals(newAuthor)) {
             authorBooksMap.get(newAuthor).remove(oldBook);
             addBook(newBook);
+            answer = "The old book is replaced by new one!";
         } else {
             addBook(newBook);
+            answer = "The old book is absent, new book added!";
         }
-        return true;
+        return answer;
     }
 }

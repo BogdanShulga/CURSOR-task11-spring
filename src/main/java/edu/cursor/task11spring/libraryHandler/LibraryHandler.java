@@ -16,5 +16,5 @@ public interface LibraryHandler {
 
     Map<BookGenre, List<Book>> getSortedByGenre();
 
-    boolean updateBook(Book oldBook, Book newBook);
+    String updateBook(Book oldBook, Book newBook);
 }

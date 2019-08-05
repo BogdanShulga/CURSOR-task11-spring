@@ -41,7 +41,7 @@ public class LibraryController {
     }
 
     @RequestMapping(value = "/updateBook", method = RequestMethod.POST)
-    public boolean updateBook(@RequestBody Book oldBook, @RequestBody Book newBook) {
+    public String updateBook(@RequestBody Book oldBook, @RequestBody Book newBook) {
         return libraryHandler.updateBook(oldBook, newBook);
     }
 }
