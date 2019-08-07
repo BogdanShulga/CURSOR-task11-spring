@@ -1,4 +1,4 @@
-package edu.cursor.task11spring.library;
+package edu.cursor.task11spring.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

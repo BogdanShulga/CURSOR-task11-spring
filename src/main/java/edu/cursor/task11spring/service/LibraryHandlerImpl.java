@@ -1,11 +1,10 @@
-package edu.cursor.task11spring.libraryHandler;
+package edu.cursor.task11spring.service;
 
-import edu.cursor.task11spring.library.Author;
-import edu.cursor.task11spring.library.Book;
-import edu.cursor.task11spring.library.BookGenre;
-import edu.cursor.task11spring.library.TwoBooks;
+import edu.cursor.task11spring.models.Author;
+import edu.cursor.task11spring.models.Book;
+import edu.cursor.task11spring.models.BookGenre;
+import edu.cursor.task11spring.models.TwoBooks;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -15,7 +14,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class LibraryHandlerImpl implements LibraryHandler {
 
-    Map<Author, List<Book>> authorBooksMap;
+    private Map<Author, List<Book>> authorBooksMap;
 
     @Override
     public String addBook(Book book) {
